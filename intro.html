@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+           
+        }
+        ul{
+            display:flex;
+            justify-content: left;
+            padding:4px 10px;
+            background-color:black;
+            
+        }
+        ul li{
+            text-decoration: none;
+            list-style-type: none;
+            color:white;
+            background-color: black;
+            padding:20px;
+            cursor: pointer;
+        }
+        nav{
+            position:fixed;
+            width:100%;
+            z-index:100;
+        }
+        .forRole{
+            max-width:510px;
+            width:99%;
+           
+            height:500px;
+            position: relative;
+        }
+        .forRole h1{
+            
+            font-size: 50px;
+            padding-top:150px;
+        
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        .mainDiv{
+            display:flex;
+            flex-direction: row;
+            flex:1fr 1fr;
+            padding:20px;
+            background-color: rgb(174, 122, 222);
+            flex-wrap: wrap;
+            padding-top:60px;
+            
+        }
+        .forImg{
+            padding:20px 100px;
+        }
+        .forImg img{
+            background-color: white;
+            mix-blend-mode:dark;
+            height:500px;
+            width:500px;
+            border-radius: 50%;
+            
+            border:5px white solid;
+        }
+        .forSkills,.forProjects{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-gap:10px;
+            padding-bottom:10px;
+            justify-content: center;
+        }
+        .skillLabel{
+            font-size: 35px;
+            text-align: center;
+            padding:10px;
+            text-decoration: underline;
+            color:rgb(72, 157, 226);
+        }
+        .forProLabel{
+            font-size: 35px;
+            text-align: center;
+            padding:10px;
+            text-decoration: underline;
+            color:rgb(234, 156, 127);
+        }
+        .forSkills div{
+            height:200px;
+            width:350px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 5px 5px rgb(222, 214, 214);
+            text-align: center;
+            background-color: rgb(86, 172, 203);
+        }
+        .forProjects div{
+            height:200px;
+            width:350px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 5px 5px rgb(222, 214, 214);
+            text-align: center;
+            background-color: rgb(234, 156, 127);
+        }
+        .forProjects a{
+          text-decoration: none;
+          color:black;
+        }
+        .forSkills div p,.forProjects div p{
+            font-size: 25px;
+            text-align: center;
+            padding-top:25%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li id="homeBut">Home</li>
+            <li>Skills</li>
+            <li>projects</li>
+        </ul>
+    </nav>
+    <div class="mainDiv">
+        <div class="forRole">
+            <h1>Hi i am Adikesavulu Mitnala.i worked as a software engineer</h1>
+        </div>
+        <div class="forImg">
+            <img src="https://media.licdn.com/dms/image/D5603AQFXFS-5gS6D4A/profile-displayphoto-shrink_200_200/0/1687248910272?e=2147483647&v=beta&t=EUY4p6SYdV229bIx21FuUURN-_OT7OC-IWaUddG45i4" srcset="">
+        </div>
+    </div>
+    <hr>
+    <h3 class="skillLabel">Skills</h3>
+
+    <div class="forSkills">
+        <div>
+            <p>Javascript</p>
+        </div>
+        <div>
+            <p>HTML</p>
+        </div>
+        <div>
+            <p>CSS</p>
+        </div>
+    </div>
+<h3 class="forProLabel">Projects</h3>
+    <div class="forProjects">
+        <a href="https://adi4b1.github.io/autosave/" target="_blank" rel="noopener noreferrer">
+            <div id="autoSaveBody">
+                <p id="autoSavePro">AutoSave Text</p>
+                <!-- <p style="display:none">This project says that how to autosave the input value in the local storage</p> -->
+            </div>
+        </a>
+        <a href="https://adi4b1.github.io/character-Info/" target="_blank" rel="noopener noreferrer">
+            <div>
+                <p>Character Info App</p>
+            </div>
+        </a>
+    </div>
+
+
+
+
+    <script>
+        let home=document.getElementById('homeBut')
+        home.addEventListener('click',(e)=>{
+            console.log(window)
+
+            e.preventDefault()
+            const height=1000
+            window.scrollTo({
+                top:height,
+                behavior:"smooth",
+            })
+        })
+
+        let ab=document.getElementById('autoSaveBody')
+        let auto=document.getElementById('autoSavePro')
+        ab.addEventListener('mouseover',(e)=>{
+            e.target.style.textAlign="center";
+            e.target.style.fontSize="25px";
+            e.target.style.transition="0.125s ease-in all";
+            e.target.innerText=`This project says that how to autosave the input value in the local storage`
+        })
+        ab.addEventListener('mouseout',(e)=>{
+            e.target.style.transition="0.125s ease-in all";
+            e.target.innerText=`AutoSaveText`;
+            e.target.style.fontSize="25px";
+            e.target.style.textAlign="center"
+        })
+    </script>
+</body>
+</html>
